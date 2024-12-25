@@ -16,6 +16,22 @@
             color: #fff;
             padding: 1rem 0;
             text-align: center;
+            position: relative;
+        }
+        .return-link {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: #fff;
+            color: #1e3a8a;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        .return-link:hover {
+            background: #e2e8f0;
         }
         .container {
             max-width: 1200px;
@@ -56,6 +72,7 @@
 </head>
 <body>
     <header>
+        <a href="index.html" class="return-link">Return to Main Page</a>
         <h1>Meet Our Collaborators</h1>
         <p>Learn about the people contributing to the Quantum Demystified project.</p>
     </header>
