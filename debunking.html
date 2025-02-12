@@ -5,8 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Debunking Quantum Myths</title>
     <script>
+        // Toggle between light and dark mode
         function toggleDarkMode() {
             document.body.classList.toggle('dark-mode');
+        }
+
+        // Function to check the quiz answers
+        function checkQuiz() {
+            let score = 0;
+
+            // Correct answers:
+            // Q1: C, Q2: C, Q3: B, Q4: C, Q5: B
+            const answers = {
+                q1: 'C',
+                q2: 'C',
+                q3: 'B',
+                q4: 'C',
+                q5: 'B'
+            };
+
+            // Loop through each question, compare selected answer with the correct one
+            for (let key in answers) {
+                const userAnswer = document.querySelector(`input[name="${key}"]:checked`);
+                if (userAnswer && userAnswer.value === answers[key]) {
+                    score++;
+                }
+            }
+
+            // Display the result
+            document.getElementById("quiz-results").innerText = "You scored " + score + " out of 5.";
         }
     </script>
     <style>
@@ -61,6 +88,25 @@
             color: #fff;
             margin-top: 2rem;
         }
+        /* Optional styling for the quiz */
+        .quiz-question {
+            margin-bottom: 1.5rem;
+        }
+        .quiz-question p {
+            margin: 0.5rem 0;
+            font-weight: bold;
+        }
+        .quiz-options label {
+            display: block;
+            margin: 0.25rem 0;
+        }
+        #quiz-results {
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+        button {
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -79,10 +125,136 @@
             <h2>Understanding Misconceptions</h2>
             <p>Many claims, such as "quantum healing" and "quantum energy bracelets," misuse scientific terminology to appear credible. These claims lack scientific validation and often exploit public fascination with quantum mechanics.</p>
         </section>
+
         <section id="interactive" class="content-section">
             <h2>Interactive Quantum Learning</h2>
-            <p>Test your knowledge with our quizzes and interactive experiments.</p>
-            <button onclick="alert('Coming soon!')">Take a Quantum Quiz</button>
+            <p>Test your knowledge with our short Quantum Quiz below!</p>
+
+            <!-- QUIZ STARTS HERE -->
+            <div id="quiz-form">
+                
+                <!-- Question 1 -->
+                <div class="quiz-question">
+                    <p>1. What does wave-particle duality refer to in quantum physics?</p>
+                    <div class="quiz-options">
+                        <label>
+                            <input type="radio" name="q1" value="A">
+                            A. The idea that light is only a wave.
+                        </label>
+                        <label>
+                            <input type="radio" name="q1" value="B">
+                            B. The idea that electrons only behave as particles.
+                        </label>
+                        <label>
+                            <input type="radio" name="q1" value="C">
+                            C. The principle that quantum objects (like electrons and photons) can exhibit both wave-like and particle-like properties.
+                        </label>
+                        <label>
+                            <input type="radio" name="q1" value="D">
+                            D. The principle that waves and particles are entirely unrelated.
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="quiz-question">
+                    <p>2. In quantum mechanics, superposition means:</p>
+                    <div class="quiz-options">
+                        <label>
+                            <input type="radio" name="q2" value="A">
+                            A. A particle must be in one definite state at all times.
+                        </label>
+                        <label>
+                            <input type="radio" name="q2" value="B">
+                            B. A particle can only occupy one position in space.
+                        </label>
+                        <label>
+                            <input type="radio" name="q2" value="C">
+                            C. A particle can exist in a combination of multiple states simultaneously until measured.
+                        </label>
+                        <label>
+                            <input type="radio" name="q2" value="D">
+                            D. A particle ceases to exist when not observed.
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="quiz-question">
+                    <p>3. Quantum tunneling describes:</p>
+                    <div class="quiz-options">
+                        <label>
+                            <input type="radio" name="q3" value="A">
+                            A. The ability of particles to teleport anywhere in the universe instantly.
+                        </label>
+                        <label>
+                            <input type="radio" name="q3" value="B">
+                            B. A phenomenon where a particle penetrates an energy barrier it classically shouldn’t be able to cross.
+                        </label>
+                        <label>
+                            <input type="radio" name="q3" value="C">
+                            C. When particles create microscopic tunnels in laboratory experiments.
+                        </label>
+                        <label>
+                            <input type="radio" name="q3" value="D">
+                            D. The process of accelerating subatomic particles in a circular accelerator.
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="quiz-question">
+                    <p>4. What happens when you measure a quantum system?</p>
+                    <div class="quiz-options">
+                        <label>
+                            <input type="radio" name="q4" value="A">
+                            A. The system remains in a superposition of many states, unaffected by the measurement.
+                        </label>
+                        <label>
+                            <input type="radio" name="q4" value="B">
+                            B. The measurement has no effect on the state of the system.
+                        </label>
+                        <label>
+                            <input type="radio" name="q4" value="C">
+                            C. The system collapses to one of the possible outcomes, ending the superposition.
+                        </label>
+                        <label>
+                            <input type="radio" name="q4" value="D">
+                            D. The system disappears entirely because observation destroys quantum particles.
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="quiz-question">
+                    <p>5. Entanglement is best described as:</p>
+                    <div class="quiz-options">
+                        <label>
+                            <input type="radio" name="q5" value="A">
+                            A. Two particles orbiting each other in space.
+                        </label>
+                        <label>
+                            <input type="radio" name="q5" value="B">
+                            B. A relationship where the state of one particle instantly influences the state of another, no matter how far apart they are.
+                        </label>
+                        <label>
+                            <input type="radio" name="q5" value="C">
+                            C. A phenomenon limited to large objects like planets.
+                        </label>
+                        <label>
+                            <input type="radio" name="q5" value="D">
+                            D. A casual term for particles that are physically stuck together.
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="button" onclick="checkQuiz()">Submit Answers</button>
+
+                <!-- Display Quiz Results -->
+                <div id="quiz-results"></div>
+            </div>
+            <!-- QUIZ ENDS HERE -->
         </section>
     </div>
     <footer>
