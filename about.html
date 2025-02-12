@@ -1,18 +1,93 @@
-<!-- about.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
+    <title>About Us - Quantum Demystified</title>
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background: #f4f4f4;
+            color: #333;
+        }
+        .dark-mode {
+            background: #121212;
+            color: #f4f4f4;
+        }
+        header {
+            background: #1e3a8a;
+            color: #fff;
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #333;
+            padding: 1rem;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+        }
+        nav a:hover {
+            background: #555;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 2rem;
+        }
+        .bio {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #ccc;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background: #1e3a8a;
+            color: #fff;
+            margin-top: 2rem;
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>About Us</h1>
+        <button class="dark-mode-toggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
     </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="debunking.html">Debunking</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
     <div class="container">
-        <h2>Who We Are</h2>
-        <p>We are quantum physicists passionate about educating people on real quantum mechanics and debunking myths surrounding it.</p>
+        <section id="about" class="content-section">
+            <h2>Who We Are</h2>
+            <p>We are passionate physicists dedicated to making quantum mechanics accessible and debunking pseudoscientific claims.</p>
+        </section>
+        <section class="bio">
+            <h3>Pedro Mench</h3>
+            <p>Pedro is an experimental physicist specializing in quantum communication. Currently pursuing a PhD at Instituto Superior Técnico and Instituto de Comunicaciones, his work focuses on developing new quantum communication protocols resistant to daylight noise.</p>
+        </section>
+        <section class="bio">
+            <h3>[Your Collaborator's Name]</h3>
+            <p>[Their background and expertise]</p>
+        </section>
     </div>
+    <footer>
+        <p>&copy; 2024 Quantum Demystified | All rights reserved</p>
+    </footer>
 </body>
 </html>
